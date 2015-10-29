@@ -81,7 +81,7 @@ class CreateSales < ActiveRecord::Migration
 end
 ```
 
-Run `rake db:migrate` to actually execute your migration; when it's done, take a look at `schema.rb`. Does it look like we expect? What if we open up the database using `rails db`? Do those tables look tight?
+Run `rake db:migrate` to actually execute your migration; when it's done, take a look at `schema.rb`. Does it look like we expect? What if we open up the database using `rails db`? Do those tables look right?
 
 Now that we've created our table, let's make a model so that we can easily access and manipulate the table from within Rails. Inside `sales_app_api/app/models`, create a new file called `sale.rb`, with the following code inside:
 
@@ -286,7 +286,6 @@ Rather than taking this on faith, let's actually fire up our server and test it!
 
 1. Go to `sales_app_api/app/controllers/application_controller.rb` and comment out the line `protect_from_forgery with: :exception`
 2. Add `gem 'rack-cors', :require => 'rack/cors'` to your Gemfile and run `bundle install`
-3.
 
 We'll be using a tool called [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) to do our testing.
 * What happens if we try to send a POST to `localhost:3000/sales`?
